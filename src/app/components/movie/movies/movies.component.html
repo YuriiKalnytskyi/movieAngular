@@ -1,0 +1,19 @@
+<!--<form>-->
+<!--  <select (click)="select(value)" >-->
+<!--    <option>ul</option>-->
+<!--    <option>us</option>-->
+<!--    <option>ru</option>-->
+<!--  </select>-->
+<!--</form>-->
+
+
+<div class="movie">
+<app-movie *ngFor="let m of movies.results" [movie]="m"> </app-movie>
+</div>
+<div class="btn">
+<button (click)="first(1)">first</button>
+<button (click)="back(1)">back</button>
+<span>Сторінка {{movies.page}}</span>
+<button (click)="next(1)">next</button>
+<button (click)="last(movies.total_pages)">last</button>
+</div>
