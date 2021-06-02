@@ -1,0 +1,33 @@
+<div>
+  <div [style]="background(movie.backdrop_path)" class="movieDetail">
+    <div class="movieDetail-contener">
+      <div class="movieDetailFoto">
+        <img class="movieDetailfoto" src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="test">
+      </div>
+      <div class="movieDetail-info">
+        <div>
+          <h3>{{movie.title}}</h3>
+          <h3>{{movie.release_date}}</h3>
+
+          <div  class="genres"  >
+            <div class="genreItem" *ngFor="let genre of genres" >'
+              {{genre.name}}
+            </div>
+          </div>
+
+        </div>
+        <div class="movieDetailLi">
+          <ul>
+          <li> Popularity:{{movie.popularity}}</li>
+          <li>Duration:{{movie.runtime}}</li>
+          <li>Rating:  {{movie.vote_average}}</li>
+          <div><h3>Overview:{{movie.overview}}</h3></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="video">
+    <iframe class="movieDetails-trailer" width="560" height="315" [src]="videoUrl" allowfullscreen></iframe>
+  </div>
+</div>

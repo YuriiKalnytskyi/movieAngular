@@ -1,0 +1,49 @@
+.movieDetail{
+  width: 100%;
+  height: 600px;
+  background-size:cover ;
+  background: black;
+}
+.movieDetail-contener{
+  width: 1300px;
+  height: 600px;
+  margin: 0 auto;
+  display: flex;
+}
+.movieDetailFoto{
+  width: 350px;
+  height: 600px;
+  align-items: center;
+  display: flex;
+}
+.movieDetailfoto{
+  width: 100%;
+}
+.movieDetail-info{
+  color: white;
+  width: 700px;
+  margin: 0 auto;
+}
+.movieDetailLi{
+  list-style: none;
+}
+.movieDetails-trailer {
+  margin-top: 20px;
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+.video {
+  width: 1300px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.genres{
+  background:red ;
+
+}
+
+.genreItem{
+  background: aqua;
+}

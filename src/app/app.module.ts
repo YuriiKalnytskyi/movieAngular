@@ -7,17 +7,30 @@ import {MovieService} from "./serveces/movie.service";
 import { MoviesComponent } from './components/movie/movies/movies.component';
 import { MovieComponent } from './components/movie/movie/movie.component';
 import { HeaderComponent } from './components/header/header.component';
+import {RouterModule, Routes} from "@angular/router";
+import { HomeComponent } from './components/home/home.component';
+import { MovieDetailComponent } from './components/movie/movie-detail/movie-detail.component';
+
+let routers:Routes=[
+  {path:'header' , component:HeaderComponent},
+  {path:'home' , component:HomeComponent},
+  {path:'movie' , component:MoviesComponent},
+  {path:'movie/:id', component:MovieDetailComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
     MovieComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule ,
+    RouterModule.forRoot(routers)
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
