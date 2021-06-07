@@ -22,9 +22,12 @@ export class MovieService {
   getMovieID(id:number):Observable<ResultsMovie>{
     return this.httpClient.get<ResultsMovie>(`https://api.themoviedb.org/3/movie/${id}${this.API_KEY}`)
   }
-
   getVideo(id:number):Observable<Video>{
     return this.httpClient.get<Video>(this.baseUrl+'movie/'+id+'/videos'+this.API_KEY)
+  }
+
+  getPoplar():Observable<Movie>{
+    return this.httpClient.get<Movie>(this.baseUrl+"movie/popular"+this.API_KEY+"&page=1")
   }
 
 }

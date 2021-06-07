@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div ><h2>popular film</h2></div>
+
+<div class="movies_film">
+  <div class="one_movie" *ngFor="let m of movie.results">
+    <div class="movie_img"><img [src]="'https://image.tmdb.org/t/p/original'+m.poster_path" alt="{{m.id}}"></div>
+  </div>
+</div>
+

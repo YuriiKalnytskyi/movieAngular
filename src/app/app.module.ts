@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './components/home/home.component';
 import { MovieDetailComponent } from './components/movie/movie-detail/movie-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 let routers:Routes=[
   {path:'header' , component:HeaderComponent},
@@ -30,7 +31,8 @@ let routers:Routes=[
   imports: [
     BrowserModule,
     HttpClientModule ,
-    RouterModule.forRoot(routers)
+    RouterModule.forRoot(routers),
+    BrowserAnimationsModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
