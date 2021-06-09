@@ -1,0 +1,9 @@
+<div class="like_info">
+  <div class="like_film1">
+    <div class="like_film" *ngFor="let d of data">
+      <img [src]="img+d.poster_path">
+      <mat-icon (click)="delete(d.id)">remove_circle_outline</mat-icon>
+    </div>
+
+  </div>
+</div>

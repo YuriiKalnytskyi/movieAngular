@@ -8,7 +8,7 @@
         <div>
           <h3>{{movie.title}}</h3>
           <h3>{{movie.release_date}}</h3>
-          
+
           <div  class="genres"  >
             <div class="genreItem" *ngFor="let genre of genres" >'
               {{genre.name}}
@@ -23,6 +23,14 @@
           <li>Rating:  {{movie.vote_average}}</li>
           <div><h3>Overview:{{movie.overview}}</h3></div>
           </ul>
+        </div>
+        <div *ngIf="!stop()">
+<!--          <button [disabled]="stop()"  (click)="addlike(movie)">like</button>-->
+          <mat-icon (click)="addlike(movie)">favorite_border</mat-icon>
+        </div>
+        <div *ngIf="stop()" class="film_icom">
+<!--          <button [disabled]="stop()"  (click)="addlike(movie)">like</button>-->
+          <mat-icon>favorite</mat-icon>
         </div>
       </div>
     </div>

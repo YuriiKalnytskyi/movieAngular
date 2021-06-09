@@ -1,0 +1,30 @@
+.like_info{
+  width: 1200px;
+  margin: 0 auto;
+
+}
+.like_film1{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.like_film img {
+  height: 300px;
+  width: 200px;
+
+}
+.like_film{
+  position: relative;
+  height:300px ;
+  width: 200px;
+  margin: 0 0 35px 35px;
+
+}
+
+.like_film mat-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: red;
+  cursor: pointer;
+}

@@ -11,12 +11,16 @@ import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './components/home/home.component';
 import { MovieDetailComponent } from './components/movie/movie-detail/movie-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import { LikeComponent } from './components/movie/like/like.component';
 
 let routers:Routes=[
   {path:'header' , component:HeaderComponent},
   {path:'home' , component:HomeComponent},
   {path:'movie' , component:MoviesComponent},
-  {path:'movie/:id', component:MovieDetailComponent}
+  {path:'movie/:id', component:MovieDetailComponent},
+  {path:'like', component:LikeComponent}
 ]
 
 @NgModule({
@@ -26,13 +30,16 @@ let routers:Routes=[
     MovieComponent,
     HeaderComponent,
     HomeComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule ,
     RouterModule.forRoot(routers),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

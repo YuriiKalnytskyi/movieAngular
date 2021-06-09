@@ -18,6 +18,9 @@ export class MovieDetailComponent implements OnInit {
   videoUrl: SafeResourceUrl;
   dangerousVideoUrl: string;
 
+  private like = JSON.parse(<string>localStorage.getItem('like'))
+  likes = this.like || []
+
 
 
   constructor(
@@ -25,15 +28,10 @@ export class MovieDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private sanitizer: DomSanitizer) {
     this.activatedRoute.params.subscribe(value => {
-      console.log(value)
       this.id = +value.id
-      console.log(this.id)
       this.movieService.getMovieID(this.id).subscribe(value1 => {
-        console.log(value1)
         this.movie = value1
         this.genres=value1.genres
-        console.log(this.movie)
-        console.log(this.genres)
       })
     })
     this.movieService.getVideo(this.id).subscribe(value1 => {
@@ -41,9 +39,6 @@ export class MovieDetailComponent implements OnInit {
       this.videoUrl=this.video.results[0].key
       this.dangerousVideoUrl = 'https://www.youtube.com/embed/' + this.videoUrl;
       this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousVideoUrl);
-
-
-      console.log(this.video)
     })
 
 
@@ -60,4 +55,12 @@ export class MovieDetailComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl(`https://www.youtube.com/embed/${key}`)
   }
 
+  stop(){
+    return this.likes.find((value:any)=>value.id ===this.id)
+  }
+
+  addlike(movie:object) {
+    this.likes.push(movie)
+    localStorage.setItem('like',JSON.stringify(this.likes))
+  }
 }
