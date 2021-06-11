@@ -27,7 +27,10 @@ export class MovieService {
   }
 
   getPoplar():Observable<Movie>{
-    return this.httpClient.get<Movie>(this.baseUrl+"movie/popular"+this.API_KEY+"&page=1")
+    return this.httpClient.get<Movie>(this.baseUrl+"movie/popular"+this.API_KEY+this.language+"&page=1")
+  }
+  getSearch(text:string):Observable<Movie>{
+    return this.httpClient.get<Movie>(this.baseUrl+"search/movie"+this.API_KEY+"&query="+text)
   }
 
 }

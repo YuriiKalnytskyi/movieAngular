@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Movie} from "../../../models/Movie";
 import {MovieService} from "../../../serveces/movie.service";
+import {DataTransferService} from "../../../serveces/data-transfer.service";
 
 
 
@@ -12,13 +13,14 @@ import {MovieService} from "../../../serveces/movie.service";
 export class MoviesComponent implements OnInit {
   movies:Movie
 
-  constructor(private MovieService:MovieService) { }
+  constructor(private MovieService:MovieService ,private dataTransferService :DataTransferService) { }
 
   ngOnInit(): void {
     this.MovieService.getMovie(1).subscribe(value => {
       this.movies=value
     })
   }
+
 
   next(page:number){
     this.MovieService.getMovie(this.movies.page+page).subscribe(value => {

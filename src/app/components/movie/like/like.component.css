@@ -3,6 +3,9 @@
   margin: 0 auto;
 
 }
+.a{
+  text-align: center;
+}
 .like_film1{
   margin-top: 20px;
   display: flex;

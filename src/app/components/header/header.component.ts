@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+import {DataTransferService} from "../../serveces/data-transfer.service";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  search=new FormControl('')
+  myform=new FormGroup({
+    search:this.search
+  })
+
+  formValue:any
+
+  constructor(private dataTransferService:DataTransferService) { }
 
   ngOnInit(): void {
   }
+  search1():void{
+    console.log(this.search.value)
+    this.dataTransferService.input.next(this.search.value)
+  }
+
 
 }

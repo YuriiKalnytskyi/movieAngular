@@ -6,9 +6,40 @@
 }
 .header-info{
   display: flex;
-  width: 300px;
-  justify-content: space-between;
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-around;
   font-size: 20px;
+}
+.a{
+  width:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 
+.nav{
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p{
+  color: goldenrod;
+  text-decoration: none;
+}
+.p:hover{
+  color: red;
+  font-weight: 600;
+}
+.f{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.f input{
+  width: 100px;
+  height: 20px;
 }

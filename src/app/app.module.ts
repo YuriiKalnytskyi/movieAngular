@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { LikeComponent } from './components/movie/like/like.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 let routers:Routes=[
   {path:'header' , component:HeaderComponent},
@@ -33,14 +34,15 @@ let routers:Routes=[
     MovieDetailComponent,
     LikeComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule ,
-    RouterModule.forRoot(routers),
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        RouterModule.forRoot(routers),
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatIconModule,
+        ReactiveFormsModule
+    ],
   providers: [MovieService],
   bootstrap: [AppComponent]
 })

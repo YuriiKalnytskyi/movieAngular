@@ -1,8 +1,16 @@
 <div class="header">
   <div class="header-info">
-    <p>UFilm</p>
-    <p><a routerLink="home">Home</a></p>
-    <p><a routerLink="movie">Movie</a></p>
-    <p><a routerLink="like">Like</a></p>
+    <div class="a"><p>UFilm</p></div>
+    <div class="nav">
+    <p><a routerLink="home" class="p" >Home</a></p>
+    <p><a routerLink="movie" class="p">Movie</a></p>
+    <p><a routerLink="like" class="p">Like</a></p>
+    </div>
+  </div>
+  <div class="f">
+  <form [formGroup]="myform"  (ngSubmit)="search1()">r
+    <input type="text" [formControl]="search">
+    <button>search</button>
+  </form>
   </div>
 </div>
